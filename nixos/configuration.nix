@@ -110,6 +110,7 @@
       firefox
       kate
       fish
+      nh
     #  thunderbird
     ];
     # initialPassword = "recovery";
