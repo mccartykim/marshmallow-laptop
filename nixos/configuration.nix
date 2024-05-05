@@ -69,17 +69,12 @@
 
   hardware.opengl = {
     enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
     extraPackages = with pkgs; [
       intel-media-driver
-      intel-vaapi-driver
-      libvdpau-va-gl
-        intel-media-driver
-	intel-vaapi-driver
-	libvdpau-va-gl
     ];
   };
-
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -107,6 +102,7 @@
     description = "Kimb";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      blender
       firefox
       kate
       fish
