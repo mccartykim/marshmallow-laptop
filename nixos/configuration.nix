@@ -105,12 +105,14 @@
       blender
       firefox
       kate
-      fish
       nh
     #  thunderbird
     ];
-    # initialPassword = "recovery";
+    shell = pkgs.fish;
+    initialPassword = "recovery";
   };
+
+  programs.fish.enable = true;
 
   programs.steam.enable = true;
 
@@ -124,6 +126,7 @@
     tailscale
     git
     wget
+    fish
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
