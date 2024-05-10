@@ -31,7 +31,6 @@
     ];
     # Configure your nixpkgs instance
     config = {
-      # Disable if you don't want unfree packages
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
@@ -40,8 +39,8 @@
 
   # TODO: Set your username
   home = {
-    username = "your-username";
-    homeDirectory = "/home/your-username";
+    username = "kimb";
+    homeDirectory = "/home/kimb";
   };
 
   # Add stuff for your user as you see fit:
@@ -51,6 +50,11 @@
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
+
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
+
+  programs.atuin.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
